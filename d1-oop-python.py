@@ -1,0 +1,287 @@
+# print("Hello World")
+            # ******OOP Day First *****************
+# class Car:
+#     def __init__(self,color,model,year):
+#         self.color = color
+#         self.model = model
+#         self.year = year
+        
+#     def start(self):
+#         return f"{self.model} is starting."
+    
+#     def stop(self):
+#         return f"{self.model} is stopping."
+    
+    
+# myCar = Car(color="red",model="Toyota",year=2020)
+
+# print(myCar.color)
+# print(myCar.model)
+# print(myCar.start())
+
+
+            # ******OOP Day First *****************
+
+# class Rectangle:
+#     def __init__(self,length,width):
+#         self.length = length
+#         self.width = width
+        
+#     def calculate_area(self):
+#         return self.length*self.width
+
+# rect = Rectangle(length=10,width=3)
+# # print(rect.calculate_area())
+# area = rect.calculate_area()
+# print(f"Area:{area} answer")
+
+
+            # ******OOP Day two *****************
+            
+# class Dog:
+#     def __init__(self,name,brand):
+#         self.name = name
+#         self.brand = brand
+        
+#     def bark(self):
+#         return f"{self.name} says woof"
+    
+# my_dog =Dog(name="Budyy",brand="Golden Retriever")
+# print(my_dog.bark())
+
+
+
+# class Dog:
+#     def __init__(self,name,breed):
+#         self.name=name
+#         self.breed=breed
+#     def bark(self):
+#         return f"{self.name} say wolf"
+    
+# myDog=Dog(name="Buddy",breed="Golden Retriever")
+
+# print(myDog.bark())
+# print(f"Name of brand is: {myDog.breed}" )
+
+
+# class Circle:
+#     def __init__(self,radius):
+#         self.radius = radius
+        
+#     def area(self):
+#         return 3.14 * self.radius **2
+    
+# my_circle = Circle(5)
+ 
+# print("Area ", my_circle.area())
+
+class Circle:
+    def __init__(self,radius):
+        self.radius=radius
+    def cal_area(self):
+        return 3.14 * self.radius
+my_circle=Circle(radius=10)
+
+print(my_circle.cal_area())
+
+
+
+# class Dog:
+#     # The Constructor method to initialize attributes
+#     def __init__(self, name, breed):
+#         self.name = name        # Instance attribute
+#         self.breed = breed      # Instance attribute
+
+#     # A Method (function inside a class)
+#     def bark(self):
+#         return f"{self.name} says Woof!"
+
+# # Creating an object (instantiating the class)
+# my_dog = Dog(name="Buddy", breed="Golden Retriever")
+
+# # Accessing attributes and methods
+# print(my_dog.name)        # Output: Buddy
+# print(my_dog.bark())      # Output: Buddy says Woof!
+
+# In Python, a class is a reusable blueprint or template used to create objects. It bundles together data (called attributes) and behaviors (called methods) into a single package.
+
+# The Core Concept
+# Class: The blueprint (e.g., a structural design for a house).Object: 
+# The actual instance built from the blueprint (e.g., a physical house).
+# Basic Syntax and ExampleHere is how you define a class and create an object from it using the standard class keyword
+
+# class Dog:
+#     # The Constructor method to initialize attributes
+#     def __init__(self, name, breed):
+#         self.name = name        # Instance attribute
+#         self.breed = breed      # Instance attribute
+
+#     # A Method (function inside a class)
+#     def bark(self):
+#         return f"{self.name} says Woof!"
+
+# # Creating an object (instantiating the class)
+# my_dog = Dog(name="Buddy", breed="Golden Retriever")
+
+# # Accessing attributes and methods
+# print(my_dog.name)        # Output: Buddy
+# print(my_dog.bark())      # Output: Buddy says Woof!
+
+
+# Key Components Explained__init__ Method: This is a special method known as a constructor. It runs automatically whenever you create a new object from the class, and it is used to assign values to the object's properties.self Parameter: This represents the specific instance of the object you are currently creating or modifying. You must include it as the first parameter in your class methods so Python can track which object is calling the function.Attributes: Variables bound to the class or object.Instance attributes: Unique to each object (like self.name above).Class attributes: Variables shared across every single instance of a class.Methods: Regular functions defined inside a class that dictate what actions the object can perform.Core Concepts of Object-Oriented Programming (OOP)Python classes allow you to use advanced OOP features to organize complex projects:1. InheritanceA new class can inherit variables and methods from an existing class. This helps you avoid repeating code.
+
+
+# 1. InheritanceA new class can inherit variables and methods from an existing class. This helps you avoid repeating code.
+# Parent Class
+# class Animal:
+#     def eat(self):
+#         return "Eating..."
+
+# # Child Class inherits from Animal
+# class Cat(Animal):
+#     def meow(self):
+#         return "Meow!"
+
+# my_cat = Cat()
+# print(my_cat.eat())   # Output: Eating... (Inherited method)
+# print(my_cat.meow())  # Output: Meow!
+
+# class Animal:
+#     def __init__(self,name, voice):
+#         self.name= name
+#         self.voice=voice
+#     def eat(self):
+#         return f"{self.voice} eating"
+# class Cat(Animal):
+#     def meow(self):
+#         return f"{self.name} says meoow meow"
+# my_cat = Cat(name="Milano",voice="Meat")
+
+# print(my_cat.eat())
+# print(my_cat.meow())
+
+
+
+
+# 2. PolymorphismDifferent classes can share the same method names but act out behaviors differently.
+
+# class Duck:
+#     def sound(self): return "Quack!"
+
+# class Cow:
+#     def sound(self): return "Moo!"
+# class Dog:
+#     def sound(self): return "wow wow!"
+
+# # A single loop can call the same method on completely different objects
+# for animal in [Duck(), Cow(),Dog()]:
+#     print(animal.sound())
+
+# class Duck:
+#     def sound(self):
+#         return "Quack Qucak Quack!"
+# class Cow:
+#     def sound(self):
+#         return "ehehe!"
+# class Dog:
+#     def sound(self):
+#         return "barking.. g."
+# for animal in [Duck(),Cow(),Dog()]:
+#     print(animal.sound())
+
+
+# Understanding the init method
+# class Car:
+#     def __init__(self,brand,model):
+#         self.brand=brand
+#         self.model = model
+        
+#     def description(self):
+#         return f"This car is a {self.brand} {self.model}"
+    
+# my_car = Car("Toyoto","Corrolla")
+# print(my_car.description())
+
+# class Book:
+#     def __init__(self,title,author="Unknown"):
+#         self.title = title
+#         self.author = author
+        
+#     def details(self):
+#         return f"{self.title} by {self.author}"
+    
+# my_book = Book("1984","George Orwell")
+# author_book = Book("Untitled")
+
+# print(my_book.details())
+# print(author_book.details())
+
+# Creating and using Objects
+
+# class Car:
+#     def __init__(self,brand,model):
+#         self.brand=brand
+#         self.model=model
+        
+    
+# my_car=Car("Totyota","Camry")
+# print(my_car.brand)
+
+# my_car.model="Corrola"
+# print(my_car.model)
+
+
+# Multiple objects
+# class Student:
+#     def __init__(self,name,grade):
+#         self.name=name
+#         self.grade=grade
+        
+#     def introduce(self):
+#         return f"My name is {self.name} , and I am in grade {self.grade}."
+    
+# student1 = Student("Alice","10th")
+# student2= Student("Bob","12th")
+
+# print(student1.introduce())
+# print(student2.introduce())
+
+
+# class vs instance variables
+
+# class Dog:
+#     species= "Canis Familiaris"
+    
+#     def __init__(self,name,age):
+#         self.name= name
+#         self.age=age
+# dog1=Dog("Buddy",5)
+# dog2=Dog("Milo",3)
+
+
+# print(dog1.name)
+# print(dog2.age)
+
+# print(dog1.species)
+
+# class Car:
+#     wheels = 4
+    
+#     def __init__(self,brand,model):
+#         self.brand= brand
+#         self.model=model
+        
+# car1 =Car("Totyota","Camry")
+# car2 = Car("Honda","Accord")
+
+# car1.wheels = 3
+
+# print(car1.wheels)
+# print(car2.wheels)
+# print(Car.wheels)
+
+    
+    
+    
+
+
