@@ -285,17 +285,34 @@
 
 # ****** Understanding Methods
 
-class BankAccount:
-    def __init__(self,owner,balance):
-        self.owner=owner
-        self.balance=balance
-    def deposit(self,amount):
-        self.balance +=amount
-        return f"New balance: ${self.balance}"
+# class BankAccount:
+#     def __init__(self,owner,balance):
+#         self.owner=owner
+#         self.balance=balance
+#     def deposit(self,amount):
+#         self.balance +=amount
+#         return f"New balance: ${self.balance}" 
     
-account =BankAccount("John",1000)
+# account =BankAccount("John",1000)
 
-print(account.deposit(500))
+# print(account.deposit(500))
+
+class Person:
+    _count = 0
+    
+    def __init__(self,name):
+        self.name=name
+        Person._count +=1
+        
+        
+        @classmethod
+        
+        def get_count(cls):
+            return cls._count
+        
+p1 = Person("Jemill")
+p2= Person("Nimra")
+print((Person.get._count()))
 
 
     
