@@ -77,14 +77,14 @@
  
 # print("Area ", my_circle.area())
 
-class Circle:
-    def __init__(self,radius):
-        self.radius=radius
-    def cal_area(self):
-        return 3.14 * self.radius
-my_circle=Circle(radius=10)
+# class Circle:
+#     def __init__(self,radius):
+#         self.radius=radius
+#     def cal_area(self):
+#         return 3.14 * self.radius
+# my_circle=Circle(radius=10)
 
-print(my_circle.cal_area())
+# print(my_circle.cal_area())
 
 
 
@@ -281,6 +281,21 @@ print(my_circle.cal_area())
 # print(car1.wheels)
 # print(car2.wheels)
 # print(Car.wheels)
+
+
+# ****** Understanding Methods
+
+class BankAccount:
+    def __init__(self,owner,balance):
+        self.owner=owner
+        self.balance=balance
+    def deposit(self,amount):
+        self.balance +=amount
+        return f"New balance: ${self.balance}"
+    
+account =BankAccount("John",1000)
+
+print(account.deposit(500))
 
 
     
