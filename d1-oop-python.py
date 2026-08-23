@@ -302,17 +302,19 @@ class Person:
     
     def __init__(self,name):
         self.name=name
-        Person._count +=1
+        Person._count += 1
         
         
-        @classmethod
+    @classmethod
         
-        def get_count(cls):
-            return cls._count
+    def get_count(cls):
+        return cls._count
         
 p1 = Person("Jemill")
-p2= Person("Nimra")
-print((Person.get._count()))
+p2 = Person("Nimra")
+print(p1.name)
+print(Person.get_count())
+# print((Person.get_count()))
 
 
     
