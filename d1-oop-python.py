@@ -553,31 +553,88 @@
 
 # Implementing abstraction with abstract base classes ABCs
     
+# from abc import ABC,abstractmethod
+
+# class Shape(ABC):
+#     @abstractmethod
+#     def area(self):
+#         pass
+    
+#     @abstractmethod
+#     def perimeter(self):
+#         pass
+    
+# class Rectangle(Shape):
+#     def __init__(self,width,height):
+#         self.width=width
+#         self.height=height
+        
+#     def area(self):
+#         return self.width*self.height
+
+#     def perimeter(self):
+#         return 2*(self.width+self.height)
+        
+# rect= Rectangle(5,10)
+
+# print(f"Area of Rectangle: {rect.area()}")
+# print(f"Perimeter of Rectangle : {rect.perimeter()}")
+
+# Practical example of Encapsulation and Abstraction
+# class BankAccount:
+#     def __init__(self,owner,balance):
+#         self.owner=owner
+#         self.__balance=balance
+        
+#     def deposit(self,amount):
+#         if amount > 0:
+#             self.__balance +=amount
+#             print(f"Deposited: {amount}. New Balance: {self.__balance}")
+#     def withdraw(self,amount):
+#         if 0 < amount <=self.__balance:
+#          self.__balance-=amount
+#          print(f"Withdraw:{amount}.New Balance: {self.__balance}")
+        
+#         else:
+#             print("Insufficient Function Invalid Amount")
+#     def get_balance(self):
+#         return self.__balance
+    
+# account=BankAccount("Junny",60000)
+# account.deposit(40000)
+# account.withdraw(20000)
+# print(account.get_balance())
+
+
 from abc import ABC,abstractmethod
+from queue import Full
 
-class Shape(ABC):
-    @abstractmethod
-    def area(self):
-        pass
-    
-    @abstractmethod
-    def perimeter(self):
-        pass
-    
-class Rectangle(Shape):
-    def __init__(self,width,height):
-        self.width=width
-        self.height=height
+class Employee(ABC):
+    def __init__(self,name):
+        self.name=name
         
-    def area(self):
-        return self.width*self.height
-
-    def perimeter(self):
-        return 2*(self.width+self.height)
+        @abstractmethod
         
-rect= Rectangle(5,10)
+        def calculate_salary(self):
+            pass
+        
+        
+class FullTimeEmployee(Employee):
+    def __init__(self,name,salary):
+        super().__init__(name)
+        self.salary=salary
+        
+    def calculate_salary(self):
+        return self.salary
+    
+emp = FullTimeEmployee("Bobi",40000)
+print(f"Salary of {emp.name}:{emp.calculate_salary()}")
+    
 
-print(f"Area of Rectangle: {rect.area()}")
-print(f"Perimeter of Rectangle : {rect.perimeter()}")
+
+            
+            
+            
+        
         
     
