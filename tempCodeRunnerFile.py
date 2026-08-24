@@ -1,11 +1,12 @@
-class Rectangle:
-    def __init__(self,length,width):
-        self.length = length
-        self.width = width
+class Temperature:
+#     def __init__(self,celsius):
+#         self.celsius = celsius
         
-    def calculate_area(self):
-        return self.length*self.width
-
-rect = Rectangle(length=10,width=3)
-area = rect.calculate_area()
-print(f"Area:{area}")
+#     @classmethod
+    
+#     def from_fahrenheit(cls,fahrenheit):
+#         celsius=(fahrenheit-32)*5/9
+#         return cls(celsius)
+    
+# temp = Temperature.from_fahrenheit(98.6)
+# print(temp.celsius)

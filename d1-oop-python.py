@@ -10,7 +10,7 @@
         
 #     def start(self):
 #         return f"{self.model} is starting."
-    
+
 #     def stop(self):
 #         return f"{self.model} is stopping."
     
@@ -297,24 +297,90 @@
 
 # print(account.deposit(500))
 
-class Person:
-    _count = 0
+# class Person:
+#     _count = 0
     
-    def __init__(self,name):
-        self.name=name
-        Person._count += 1
+#     def __init__(self,name):
+#         self.name=name
+#         Person._count += 1
         
         
-    @classmethod
+#     @classmethod
         
-    def get_count(cls):
-        return cls._count
+#     def get_count(cls):
+#         return cls._count
         
-p1 = Person("Jemill")
-p2 = Person("Nimra")
-print(p1.name)
-print(Person.get_count())
+# p1 = Person("Jemill")
+# p2 = Person("Nimra")
+# print(p1.name)
+# print(Person.get_count())
 # print((Person.get_count()))
+
+# class methods and clasmethod
+# class Temperature:
+#     def __init__(self,celsius):
+#         self.celsius = celsius
+        
+#     @classmethod
+    
+#     def from_fahrenheit(cls,fahrenheit):
+#         celsius=(fahrenheit-32)*5/9
+#         return cls(celsius)
+    
+# temp = Temperature.from_fahrenheit(98.6)
+# print(temp.celsius)
+
+
+# static methods and staticmethod 
+
+# class MathsUtils:
+    
+#     @staticmethod
+    
+#     def add(x,y):
+#         return x+y
+    
+# result = MathsUtils.add(77,21)
+
+# print(result)
+
+
+# class TemperatureConverter:
+    
+#     @staticmethod
+    
+#     def celsius_to_farnheit(celsius):
+#         return (celsius * 9/5) +32
+    
+# temp_fahrenheit=TemperatureConverter.celsius_to_farnheit(25)
+# print(temp_fahrenheit)
+
+# Method Overloading and Overrding
+
+# class MathOperation:
+#     def add(self,a,b=0,c=0):
+#         return a+b+c
+# math_op=MathOperation()
+
+# print(math_op.add(2))
+# print(math_op.add(2,3))
+# print(math_op.add(2,3,4))
+
+class Animal:
+    def sound(self):
+        return "Some generic sound"
+    
+class Dog(Animal):
+    def sound(self):
+        return "Bark"
+    
+class Cat(Animal):
+    def sound(self):
+        return "Meow"
+    
+animals=[Animal(),Dog(),Cat()]
+for animal in animals:
+    print(animal.sound())
 
 
     
