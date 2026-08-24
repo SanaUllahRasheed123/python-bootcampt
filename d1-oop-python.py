@@ -526,29 +526,58 @@
 
 # Public Protected and Private Attributes
     
-class Employee:
-    def __init__(self,name,salary):
-        self.name=name
-        self._salary=salary
+# class Employee:
+#     def __init__(self,name,salary):
+#         self.name=name
+#         self._salary=salary
         
-    def display(self):
-        return f"Name: {self.name}, Salary: {self._salary}"
+#     def display(self):
+#         return f"Name: {self.name}, Salary: {self._salary}"
     
-class Manager(Employee):
-    def __init__(self,name,salary,department):
-        super().__init__(name,salary)
-        self.department=department
+# class Manager(Employee):
+#     def __init__(self,name,salary,department):
+#         super().__init__(name,salary)
+#         self.department=department
         
-    def display_manager(self):
-        return f"Manager Name : {self.name},Department:{self.department},Salary: {self._salary}"
+#     def display_manager(self):
+#         return f"Manager Name : {self.name},Department:{self.department},Salary: {self._salary}"
     
-emp = Employee("John",5000)
-mgr=Manager("Alice",800000, "HR")
+# emp = Employee("John",5000)
+# mgr=Manager("Alice",800000, "HR")
 
-print(emp.display())
-print(mgr.display_manager())
+# print(emp.display())
+# print(mgr.display_manager())
 
-print(emp.name)
-print(mgr._salary)
+# print(emp.name)
+# print(mgr._salary)
+
+# Implementing abstraction with abstract base classes ABCs
     
+from abc import ABC,abstractmethod
 
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+    
+    @abstractmethod
+    def perimeter(self):
+        pass
+    
+class Rectangle(Shape):
+    def __init__(self,width,height):
+        self.width=width
+        self.height=height
+        
+    def area(self):
+        return self.width*self.height
+
+    def perimeter(self):
+        return 2*(self.width+self.height)
+        
+rect= Rectangle(5,10)
+
+print(f"Area of Rectangle: {rect.area()}")
+print(f"Perimeter of Rectangle : {rect.perimeter()}")
+        
+    
