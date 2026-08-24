@@ -20,7 +20,7 @@
 # print(myCar.color)
 # print(myCar.model)
 # print(myCar.start())
-
+ 
 
             # ******OOP Day First *****************
 
@@ -476,33 +476,79 @@
 # make_fly(ostrich)
 
 
-class Animal:
-    def sound(self):
-        return "Some Generic animal sound"
+# class Animal:
+#     def sound(self):
+#         return "Some Generic animal sound"
     
-class Dog(Animal):
-    def sound (self):
-        return "bark"
+# class Dog(Animal):
+#     def sound (self):
+#         return "bark"
     
-class Cat(Animal):
-    def sound(self):
-        return "Meow "
+# class Cat(Animal):
+#     def sound(self):
+#         return "Meow "
     
-def make_sound(animal):
-    print(animal.sound())
-    
-
-
-dog=Dog()
-cat = Cat()
-
-make_sound(dog)
-make_sound(cat)
-
-
-
-    
-    
+# def make_sound(animal):
+#     print(animal.sound())
     
 
+
+# dog=Dog()
+# cat = Cat()
+
+# make_sound(dog)
+# make_sound(cat)
+
+
+# Undersanding Encapsulation
+
+# class BankAccount:
+#     def __init__(self,balance):
+#         self.__balance = balance
+        
+#     def deposit(self,amount):
+#         if amount > 0:
+#          self.__balance+=amount
+        
+#     def withdraw(self,amount):
+#         if amount <= self.__balance:
+#             self.__balance-=amount
+              
+#     def get_balance(self):
+#         return self.__balance
+    
+# account = BankAccount(10000)
+# account.deposit(5000)
+# account.withdraw(3000)
+
+# print(account.get_balance())
+
+
+# Public Protected and Private Attributes
+    
+class Employee:
+    def __init__(self,name,salary):
+        self.name=name
+        self._salary=salary
+        
+    def display(self):
+        return f"Name: {self.name}, Salary: {self._salary}"
+    
+class Manager(Employee):
+    def __init__(self,name,salary,department):
+        super().__init__(name,salary)
+        self.department=department
+        
+    def display_manager(self):
+        return f"Manager Name : {self.name},Department:{self.department},Salary: {self._salary}"
+    
+emp = Employee("John",5000)
+mgr=Manager("Alice,800000", "HR")
+
+print(emp.display())
+print(mgr.display_manager())
+
+print(emp.name)
+print(mgr._salary)
+    
 

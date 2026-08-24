@@ -1,12 +1,22 @@
-class Temperature:
-#     def __init__(self,celsius):
-#         self.celsius = celsius
-        
-#     @classmethod
+class Animal:
+#     def sound(self):
+#         return "Some Generic animal sound"
     
-#     def from_fahrenheit(cls,fahrenheit):
-#         celsius=(fahrenheit-32)*5/9
-#         return cls(celsius)
+# class Dog(Animal):
+#     def sound (self):
+#         return "bark"
     
-# temp = Temperature.from_fahrenheit(98.6)
-# print(temp.celsius)
+# class Cat(Animal):
+#     def sound(self):
+#         return "Meow "
+    
+# def make_sound(animal):
+#     print(animal.sound())
+    
+
+
+# dog=Dog()
+# cat = Cat()
+
+# make_sound(dog)
+# make_sound(cat)
