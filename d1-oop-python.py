@@ -366,21 +366,138 @@
 # print(math_op.add(2,3))
 # print(math_op.add(2,3,4))
 
+# class Animal:
+#     def sound(self):
+#         return "Some generic sound"
+    
+# class Dog(Animal):
+#     def sound(self):
+#         return "Bark"
+    
+# class Cat(Animal):
+#     def sound(self):
+#         return "Meow"
+    
+# animals=[Animal(),Dog(),Cat()]
+# for animal in animals:
+#     print(animal.sound())
+
+
+# *******Inheritence and Polymorphism
+# class Animal:
+    
+#     def __init__(self,name):
+#         self.name=name
+        
+#     def speak(self):
+#         return f"{self.name} makes a sound"
+    
+# class Dog(Animal):
+    
+#     def speak(self):
+#         return f"{self.name} barks"
+    
+# dog=Dog("Buddy")
+# print(dog.speak())
+
+# single and multiple inheritence
+
+# class Vehicle:
+#     def __init__(self,brand,model):
+#         self.brand=brand
+#         self.model=model
+        
+#     def description(self):
+#         return f"{self.brand} {self.model}"
+# class Car(Vehicle):
+#     def wheels(self):
+#         return 4
+    
+# my_car =Car(brand="Toyota",model="Corolla")
+# print(my_car.description())
+# print(my_car.wheels())
+
+
+#  Method Resolution Order(MRO)
+
+# class A:
+#     def greet(self):
+#         return "Hello from A"
+    
+# class B(A):
+#     pass
+
+# class C(B):
+#     pass
+
+# obj = C()
+
+# print(obj.greet())
+# print(C.__mro__)
+
+
+# class X:
+#     def greet(self):
+#         return "Hello from X"
+# class Y:
+#     def greet(self):
+#         return "Hello from Y"
+    
+# class Z(X,Y):
+#     pass
+
+# obj =Z()
+
+# print(obj.greet())
+# print(Z.__mro__)
+
+
+# **** Polymorphisim and Method Overriding
+
+# class Bird:
+#     def fly(self):
+#         return "Bird is flying"
+    
+# class Sparrow(Bird):
+#     def fly(self):
+#         return "Sparrow is flying"
+    
+# class Ostrich(Bird):
+#     def fly(self):
+#         return "Ostrich is flying"
+    
+# def make_fly(bird):
+#     print(bird.fly())
+    
+# sparrow=Sparrow()
+# ostrich=Ostrich()
+
+# make_fly(sparrow)
+# make_fly(ostrich)
+
+
 class Animal:
     def sound(self):
-        return "Some generic sound"
+        return "Some Generic animal sound"
     
 class Dog(Animal):
-    def sound(self):
-        return "Bark"
+    def sound (self):
+        return "bark"
     
 class Cat(Animal):
     def sound(self):
-        return "Meow"
+        return "Meow "
     
-animals=[Animal(),Dog(),Cat()]
-for animal in animals:
+def make_sound(animal):
     print(animal.sound())
+    
+
+
+dog=Dog()
+cat = Cat()
+
+make_sound(dog)
+make_sound(cat)
 
 
     
