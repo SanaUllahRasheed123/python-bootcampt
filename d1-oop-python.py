@@ -543,7 +543,7 @@ class Manager(Employee):
         return f"Manager Name : {self.name},Department:{self.department},Salary: {self._salary}"
     
 emp = Employee("John",5000)
-mgr=Manager("Alice,800000", "HR")
+mgr=Manager("Alice",800000, "HR")
 
 print(emp.display())
 print(mgr.display_manager())
