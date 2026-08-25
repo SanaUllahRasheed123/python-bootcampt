@@ -606,31 +606,125 @@
 # print(account.get_balance())
 
 
-from abc import ABC,abstractmethod
-from queue import Full
+# from abc import ABC,abstractmethod
+# from queue import Full
 
-class Employee(ABC):
-    def __init__(self,name):
-        self.name=name
+# class Employee(ABC):
+#     def __init__(self,name):
+#         self.name=name
         
-        @abstractmethod
+#         @abstractmethod
         
-        def calculate_salary(self):
-            pass
+#         def calculate_salary(self):
+#             pass
         
         
-class FullTimeEmployee(Employee):
-    def __init__(self,name,salary):
-        super().__init__(name)
-        self.salary=salary
+# class FullTimeEmployee(Employee):
+#     def __init__(self,name,salary):  
+#         super().__init__(name)
+#         self.salary=salary
         
-    def calculate_salary(self):
-        return self.salary
+#     def calculate_salary(self):
+#         return self.salary
     
-emp = FullTimeEmployee("Bobi",40000)
-print(f"Salary of {emp.name}:{emp.calculate_salary()}")
-    
+# emp = FullTimeEmployee("Bobi",40000)
+# print(f"Salary of {emp.name}:{emp.calculate_salary()}")
 
+# Module 6 Advanced OOP concepts
+# Understanding Magic methods Operator Overloading
+
+# class Book:
+#     def __init__(self,title,author):
+#         self.title=title
+#         self.author=author
+#     def __str__(self):
+#         return f"{self.title} by {self.author}"
+    
+# book1 = Book("1984","George Orwell")
+# print(book1)
+
+# class Vector:
+#     def __init__(self,x,y):
+#         self.x= x
+#         self.y= y
+        
+#     def __add__(self, other):
+#         return Vector(self.x+other.x,self.y+other.y)
+    
+#     def __str__(self):
+#         return f"Vector({self.x},{self.y})"
+    
+# v1= Vector(2,3)
+# v2 =Vector(4,5)
+
+# v3=v1+v2
+# print(v3)
+
+
+# Creating custom Iterators and Generators
+
+# class CountDown:
+#     def __init__(self,start):
+#         self.start = start
+        
+#     def __iter__(self):
+#         return self
+    
+#     def __next__(self):
+#         if self.current <=0:
+#             raise StopIteration
+#         else:
+#             self.current -= 1
+#             return self.current +1
+    
+# countdown = CountDown(5)
+# for number in countdown:
+#     print(number)
+
+
+# def fibonacci(n):
+#     a,b = 0,1
+#     for _ in range(n):
+#         yield a 
+#         a,b=b,a+b
+        
+    
+# fib = fibonacci(7)
+# for num in fib:
+#     print(num)
+
+# Understanding composition vs Inheritence
+
+# class Animal:
+#     def __init__(self,name):
+#         self.name = name
+        
+#     def speak(self):
+#         return f"{self.name} makes a sound"
+    
+# class Dog(Animal):
+#     def speak(self):
+#         return f"{self.name} barks."
+    
+# dog = Dog("Buddy")
+# print(dog.speak())
+
+
+class Engine:
+    def start(self):
+        return "Engine starts."
+    
+class Car:
+    def __init__(self,model):
+        self.model = model
+        self.engine = Engine()
+        
+    def start(self):
+        return f"{self.model}: {self.engine.start()}"
+    
+car = Car("Toyota")
+print(car.start())
+    
 
         
             
