@@ -710,23 +710,108 @@
 # print(dog.speak())
 
 
-class Engine:
-    def start(self):
-        return "Engine starts."
+# class Engine:
+#     def start(self):
+#         return "Engine starts. "
     
-class Car:
-    def __init__(self,model):
-        self.model = model
-        self.engine = Engine()
+# class Car:
+#     def __init__(self,model):
+#         self.model = model
+#         self.engine = Engine()
         
-    def start(self):
-        return f"{self.model}: {self.engine.start()}"
+#     def start(self):
+#         return f"{self.model}: {self.engine.start()}"
     
-car = Car("Toyota")
-print(car.start())
-    
+# car = Car("Toyota")
+# print(car.start()) 
 
+# class Order:
+#     def __init__(self,items):
+#         self.items=items
         
+#     def calculate_total(self):
+#         return sum(self.items)
+# class OrderPrinter: 
+#     def print_order(self,order):
+#         for item in order.items:
+#             print(f"Item:{item}")
+            
+# order = Order([10,20,30])
+# printer = OrderPrinter()
+
+# print("Total:",order.calculate_total())
+# printer.print_order(order) 
+    
+# Creating a GUI Application using OOP
+
+# import tkinter as tk
+
+# class MainWindow:
+#     def __init__(self,root):
+#         self.root=root
+#         self.root.title("Simple GUI")
+#         self.root.geometry("300x200")
+        
+#         self.label=tk.Label(root,text="Welcome for creating new python GUI")
+#         self.label.pack()
+        
+# root = tk.Tk()
+# app= MainWindow(root)
+# root.mainloop()
+
+# import tkinter as tk
+# class MainWindow:
+#     def __init__(self,root):
+        
+#         self.root=root
+#         self.root.title("Interactive GUI")
+#         self.root.geometry("300x200")
+        
+#         self.label = tk.Label(root,text="Click the button!")
+#         self.label.pack()
+        
+#         self.button = tk.Button(root,text="Click Me",command=self.on_button_click)
+#         self.button.pack()
+#     def on_button_click(self):
+#         self.label.config(text="Button Clicked")
+        
+# root= tk.Tk()
+# app = MainWindow(root)
+# root.mainloop()
+
+
+# Project Building a Simple OOPBased Calculator 
+
+class Character:
+    def __init__(self,name,health):
+        self.name=name
+        self.health=health
+        
+    def display_info(self):
+        print(f"Character:{self.name}")
+        print(f"Health:{self.health}")
+player=Character("Hero",100)
+player.display_info()
+
+class Enemy(Character):
+    def __init__(self,name,health,damage):
+        super().__init__(name,health)
+        self.damage=damage
+    
+    def attack(self,other):
+        other.health -=self.damage
+        print(f"{self.name} attacks {other.name} for {self.damage} damages!")
+        print(f"{other.name}'s health is now {other.health}")
+        
+player=Character("Hero",100)
+enemy=Enemy("Goblin",50,10)
+
+    
+player.display_info()
+enemy.display_info()
+
+enemy.attack(player)
+player.display_info()
             
             
         

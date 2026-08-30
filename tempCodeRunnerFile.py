@@ -1,22 +1,14 @@
-class Animal:
-#     def sound(self):
-#         return "Some Generic animal sound"
+class Engine:
+    def start(self):
+        return "Engine starts. "
     
-# class Dog(Animal):
-#     def sound (self):
-#         return "bark"
+class Car:
+    def __init__(self,model):
+        self.model = model
+        self.engine = Engine()
+        
+    def start(self):
+        return f"{self.model}: {self.engine.start()}"
     
-# class Cat(Animal):
-#     def sound(self):
-#         return "Meow "
-    
-# def make_sound(animal):
-#     print(animal.sound())
-    
-
-
-# dog=Dog()
-# cat = Cat()
-
-# make_sound(dog)
-# make_sound(cat)
+car = Car("Toyota")
+print(car.start())
