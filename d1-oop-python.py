@@ -782,36 +782,99 @@
 
 # Project Building a Simple OOPBased Calculator 
 
-class Character:
-    def __init__(self,name,health):
-        self.name=name
-        self.health=health
+# class Character:
+#     def __init__(self,name,health):
+#         self.name=name
+#         self.health=health
         
-    def display_info(self):
-        print(f"Character:{self.name}")
-        print(f"Health:{self.health}")
-player=Character("Hero",100)
-player.display_info()
+#     def display_info(self):
+#         print(f"Character:{self.name}")
+#         print(f"Health:{self.health}")
+# player=Character("Hero",100)
+# player.display_info()
 
-class Enemy(Character):
-    def __init__(self,name,health,damage):
-        super().__init__(name,health)
-        self.damage=damage
+# class Enemy(Character):
+#     def __init__(self,name,health,damage):
+#         super().__init__(name,health)
+#         self.damage=damage
     
-    def attack(self,other):
-        other.health -=self.damage
-        print(f"{self.name} attacks {other.name} for {self.damage} damages!")
-        print(f"{other.name}'s health is now {other.health}")
+#     def attack(self,other):
+#         other.health -=self.damage
+#         print(f"{self.name} attacks {other.name} for {self.damage} damages!")
+#         print(f"{other.name}'s health is now {other.health}")
         
-player=Character("Hero",100)
-enemy=Enemy("Goblin",50,10)
+# player=Character("Hero",100)
+# enemy=Enemy("Goblin",50,10)
 
     
-player.display_info()
-enemy.display_info()
+# player.display_info()
+# enemy.display_info()
 
-enemy.attack(player)
-player.display_info()
+# enemy.attack(player)
+# player.display_info()
+
+
+
+# Abstraction and encapsulation are two fundamental pillars of Object-Oriented Programming (OOP) that work together to make code modular, secure, and maintainable. While they sound similar, abstraction is about hiding complexity (focusing on what an object does), whereas encapsulation is about hiding data and restricting access (focusing on how data is secured)
+
+# 🧱 1. Abstraction (Hiding Complexity)Abstraction hides complex background details and only exposes essential functionalities to the user.Real-world analogy: When you drive a car, you use the gas pedal to accelerate. You do not need to understand how the engine burns fuel or manages torque to drive.Python Implementation: Python implements abstraction using Abstract Base Classes (ABC) from the built-in abc module and the @abstractmethod decorator. This acts as a blueprint, forcing child classes to implement specific methods.
+
+from abc import ABC, abstractmethod
+
+# Abstract Class (The Blueprint)
+class Vehicle(ABC):
+    @abstractmethod
+    def start_engine(self):
+        """Every vehicle must define how it starts its engine."""
+        pass
+
+# Concrete Class
+class Car(Vehicle):
+    def start_engine(self):
+        return "Car engine started. Vroom!"
+
+# Usage
+my_car = Car()
+print(my_car.start_engine())  # Output: Car engine started. Vroom!
+
+# If you try to instantiate Vehicle() directly, Python will raise a TypeError. It forces you to interact only with the functional child classe
+
+
+# 🔒 2. Encapsulation (Hiding Data)Encapsulation wraps data (attributes) and methods into a single unit (a class) and restricts direct external access to prevent accidental modification.Real-world analogy: An ATM protects your account balance. You cannot manually rewrite the number on the screen; you must go through the authorized system interface (deposit/withdrawal methods) to change it.Python Implementation: Python doesn't have strict private keywords like Java or C++. Instead, it uses naming conventions to restrict access:_variable (Single underscore): Protected. A warning to other developers not to access it outside the class or its subclasses.__variable (Double underscore): Private. Triggers Name Mangling, which alters the internal name so it cannot be accessed directly by its variable name from outside.To access or modify private variables safely, developers use Getters and Setters (or the @property decorator).
+
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner          # Public attribute
+        self.__balance = balance    # Private attribute (Name mangled)
+
+    # Getter method to read private data safely
+    @property
+    def balance(self):
+        return self.__balance
+
+    # Setter method to modify private data with validation logic
+    @balance.setter
+    def balance(self, amount):
+        if amount >= 0:
+            self.__balance = amount
+        else:
+            print("Error: Balance cannot be negative!")
+
+# Usage
+account = BankAccount("Alice", 1000)
+
+# Attempting direct access throws an AttributeError
+# print(account.__balance) 
+
+# Accessing via the getter (Property)
+print(account.balance)  # Output: 1000
+
+# Modifying via the setter with validation
+account.balance = -500   # Output: Error: Balance cannot be negative!
+account.balance = 1200   # Successfully updates
+print(account.balance)  # Output: 1200
+
+
 
 # BY BY oop
 
