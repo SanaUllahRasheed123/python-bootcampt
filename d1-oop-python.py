@@ -875,10 +875,14 @@ account.balance = 1200   # Successfully updates
 print(account.balance)  # Output: 1200
 
 
+# ⚖️ Comparison SummaryFeatureAbstractionEncapsulationCore FocusHiding complexity by exposing only what is necessary.Hiding data and grouping it with operations inside a class.Problem SolvedSolves design-level complexity ("What does it do?").Solves implementation-level safety ("How is it secured?").Python ToolImplemented using the abc module and abstract methods.Implemented using underscores (_, __) and properties.
+
 
 # BY BY oop
 
 # 31-08-2026 OOP completed
+
+# Hello world
             
             
         
